@@ -1,0 +1,5 @@
+export const SET_CURRENT_FRAMES = 'SET_CURRENT_FRAMES'
+
+export const SET_NOT_WORK = 'SET_NOT_WORK'
+
+export const SET_PLAY_STATE = 'SET_PLAY_STATE'

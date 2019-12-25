@@ -1,0 +1,143 @@
+@import "./variable.scss";
+@import "./mixin.scss";
+
+html, body {
+    height: 100%;
+    line-height: 1;
+    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    background: $color-white;
+    overflow-y: hidden;
+}
+
+/** 隐藏IE浏览器自带的文本删除按钮和密码查看按钮 **/
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+/**
+* 阻止用户的点击动作产生任何效果
+* 阻止缺省鼠标指针的显示
+* 阻止CSS里的 hover 和 active 状态的变化触发事件
+* 阻止JavaScript点击动作触发的事件
+**/
+.prevent-click {
+    pointer-events: none;
+}
+
+/** 没有数据 **/
+.no-data {
+    text-align: center;
+    font-size: $size-tn !important;
+    color: $color-text-secondary;
+}
+
+/** 居中 **/
+.center-block {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1024px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.el-checkbox__inner {
+    border-color: $color-text-placeholder;
+}
+
+/** 文字大小修改 **/
+.el-button, .el-input {
+    font-size: $size-md;
+}
+
+.el-button--small {
+    padding: 8px 15px;
+    font-size: $size-tn;
+}
+
+/** 对话框 **/
+.el-dialog__wrapper {
+    bottom: $footer-height;
+}
+
+.el-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    .el-dialog__header {
+        padding: 12px 20px;
+        background-color: $color-primary;
+        .el-dialog__title {
+            font-size: $size-md;
+            color: $color-white;
+            letter-spacing: 1PX;
+        }
+        .el-dialog__close {
+            color: $background-grey;
+        }
+    }
+    .el-dialog__footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 20px;
+        .el-button {
+            padding: 12px 32px;
+        }
+    }
+}
+
+/** 提示类对话框 **/
+.t100-dialog, .t200-dialog {
+    width: 80%;
+    @media (min-width: 768px) {
+        width: 420px;
+    }
+}
+
+.t200-dialog-small {
+    width: 80%;
+    @media (min-width: 768px) {
+        width: 380px;
+    }
+}
+
+/** 组件里的表格 自定义类：tu-table **/
+.tu-table {
+    @include box-shadow();
+    thead {
+        color: $color-text-regular;
+        th {
+            background-color: $background-color-base;
+            .cell {
+                font-size: $size-md;
+            }
+        }
+    }
+    .el-table__row .cell {
+        font-size: $size-md;
+    }
+    .el-table__body tr.current-row > td {
+        background-color: $background-blue-light !important;
+    }
+    &.el-table--striped .el-table__body tr.el-table__row--striped td {
+        background-color: $background-color-base;
+    }
+}
+
+.el-progress {
+    overflow: hidden;
+}
+
+/** 进度条颜色 **/
+#nprogress .bar {
+    background: $color-yellow; //自定义颜色
+    .peg {
+        box-shadow: 0 0 10px $color-yellow, 0 0 5px $color-yellow;
+    }
+}
+

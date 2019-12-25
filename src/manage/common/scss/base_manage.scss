@@ -1,0 +1,66 @@
+@import "./variable.scss";
+@import "./mixin.scss";
+
+.manage {
+    &.wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .content {
+            position: relative;
+            padding: 12px;
+            flex: 1;
+            background-color: rgb(235, 236, 242);
+            overflow-y: auto;
+            box-sizing: border-box;
+            user-select: text;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            font-size: $size-md;
+            box-shadow: 0 -4px 8px -1px rgba(7, 17, 27, .2);
+            z-index: 1;
+        }
+    }
+}
+
+.my-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .el-tabs__content {
+        flex: 1;
+        background-color: #fff;
+        overflow-y: auto;
+    }
+    .el-tabs__nav-scroll {
+        padding: 0 24px;
+        background-color: #fff;
+        .el-tabs__nav {
+            padding: 6px 0;
+            .el-tabs__item {
+                font-size: 16px;
+                color: $color-text-secondary;
+                &.is-active {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+    .my-tabs-item {
+        padding: 20px 24px;
+        font-size: $size-md;
+        box-sizing: border-box;
+    }
+    .el-tabs__active-bar {
+        background-color: $color-danger;
+    }
+}
+
+.el-message__icon {
+    font-size: 18px;
+}
+
